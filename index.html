@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dental Research Hub | Evidence-Based Dentistry & BDS Resources</title>
+
+  <meta name="description" content="Dental Research Hub provides evidence-based dental knowledge, clinical dentistry resources, BDS study materials, oral health information, research articles and educational resources.">
+
+  <meta name="keywords" content="dental research, dentistry, BDS study materials, dental education, clinical dentistry, oral health, dental research articles, periodontology, oral surgery">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #243447;
+      background: #f7fafc;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #126782;
+    }
+
+    .logo span {
+      color: #243447;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    nav a:hover {
+      color: #126782;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #eaf7fb, #ffffff);
+      padding: 80px 20px;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      max-width: 850px;
+      margin: auto;
+      color: #173b4d;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 20px auto 30px;
+      font-size: 18px;
+      color: #64748b;
+    }
+
+    .search-box {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 17px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-box button {
+      padding: 0 25px;
+      border: none;
+      background: #126782;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .search-box button:hover {
+      background: #0e5268;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      color: #173b4d;
+    }
+
+    .section-title p {
+      color: #64748b;
+      margin-top: 8px;
+    }
+
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .subject-card {
+      background: white;
+      padding: 25px 15px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      border-color: #126782;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .subject-card .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .subject-card h3 {
+      font-size: 16px;
+      color: #334155;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      color: #173b4d;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eaf7fb;
+      color: #126782;
+      padding: 4px 9px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .feature-section {
+      background: white;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .feature .big-icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+      color: #173b4d;
+    }
+
+    .feature p {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .about {
+      background: #eef7f9;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-content p {
+      color: #526475;
+      margin-top: 15px;
+    }
+
+    footer {
+      background: #173b4d;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .footer-links {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    #searchResults {
+      display: none;
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    #searchResults p {
+      padding: 12px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 8px;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 900px) {
+      .subjects {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 55px 18px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .search-box {
+        flex-direction: column;
+      }
+
+      .search-box button {
+        padding: 14px;
+      }
+
+      .subjects,
+      .cards,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+
+    <div class="logo">
+      Dental <span>Research Hub</span>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#clinical">Clinical</a>
+      <a href="#bds">BDS Hub</a>
+      <a href="#patients">Patients</a>
+      <a href="#about">About</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="hero" id="home">
+
+  <h1>
+    Evidence-Based Dental Knowledge & Research
+  </h1>
+
+  <p>
+    Explore dentistry through research articles, clinical resources,
+    BDS study materials and reliable oral health information.
+  </p>
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search dental topics, articles or subjects..."
+    >
+
+    <button onclick="searchArticles()">
+      Search
+    </button>
+
+  </div>
+
+  <div id="searchResults"></div>
+
+</section>
+
+
+<section class="container" id="subjects">
+
+  <div class="section-title">
+
+    <h2>Dental Subjects</h2>
+
+    <p>
+      Explore major areas of dentistry
+    </p>
+
+  </div>
+
+
+  <div class="subjects">
+
+    <a href="#" class="subject-card">
+      <div class="icon">🩺</div>
+      <h3>Oral Medicine</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">🔬</div>
+      <h3>Oral Pathology</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">🦷</div>
+      <h3>Periodontology</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">⚕️</div>
+      <h3>Oral Surgery</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">🪥</div>
+      <h3>Conservative Dentistry</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">🔎</div>
+      <h3>Endodontics</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">😁</div>
+      <h3>Prosthodontics</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">📐</div>
+      <h3>Orthodontics</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">👶</div>
+      <h3>Pedodontics</h3>
+    </a>
+
+    <a href="#" class="subject-card">
+      <div class="icon">🌍</div>
+      <h3>Public Health Dentistry</h3>
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="feature-section" id="research">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Explore Dental Knowledge</h2>
+
+      <p>
+        Resources for students, clinicians, researchers and patients
+      </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <div class="feature">
+
+        <div class="big-icon">🧪</div>
+
+        <h3>Research</h3>
+
+        <p>
+          Explore dental research, reviews, evidence-based dentistry
+          and scientific references.
+        </p>
+
+      </div>
+
+
+      <div class="feature" id="clinical">
+
+        <div class="big-icon">🩺</div>
+
+        <h3>Clinical Dentistry</h3>
+
+        <p>
+          Learn about diagnosis, treatment concepts, procedures
+          and clinical dental practice.
+        </p>
+
+      </div>
+
+
+      <div class="feature" id="bds">
+
+        <div class="big-icon">🎓</div>
+
+        <h3>BDS Student Hub</h3>
+
+        <p>
+          Important questions, viva preparation, spotters,
+          short notes and exam resources.
+        </p>
+
+      </div>
+
+
+      <div class="feature" id="patients">
+
+        <div class="big-icon">👨‍⚕️</div>
+
+        <h3>Patient Education</h3>
+
+        <p>
+          Simple explanations of common dental problems,
+          treatments and oral hygiene.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <div class="section-title">
+
+    <h2>Featured Dental Topics</h2>
+
+    <p>
+      Start exploring important dental concepts
+    </p>
+
+  </div>
+
+
+  <div class="cards">
+
+    <article class="card">
+
+      <span class="tag">ORAL HEALTH</span>
+
+      <h3>Why Are My Teeth Sensitive?</h3>
+
+      <p>
+        Understand dentinal hypersensitivity, common causes,
+        contributing factors and dental treatment approaches.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <span class="tag">ORAL HISTOLOGY</span>
+
+      <h3>Tooth Development</h3>
+
+      <p>
+        Learn the major stages of tooth development,
+        including initiation, bud, cap and bell stages.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <span class="tag">PERIODONTOLOGY</span>
+
+      <h3>Dental Plaque and Calculus</h3>
+
+      <p>
+        Understand plaque formation, calculus,
+        gingival inflammation and periodontal disease.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <span class="tag">ENDODONTICS</span>
+
+      <h3>Root Canal Treatment</h3>
+
+      <p>
+        Explore the principles, indications and major
+        concepts involved in endodontic treatment.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <span class="tag">ORAL SURGERY</span>
+
+      <h3>Wisdom Teeth</h3>
+
+      <p>
+        Learn about impacted third molars, symptoms,
+        complications and treatment principles.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <span class="tag">PREVENTIVE DENTISTRY</span>
+
+      <h3>Oral Hygiene</h3>
+
+      <p>
+        Understand effective tooth brushing, interdental
+        cleaning and prevention of common dental diseases.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+  <div class="container">
+
+    <div class="about-content">
+
+      <div class="section-title">
+
+        <h2>About Dental Research Hub</h2>
+
+      </div>
+
+      <p>
+        Dental Research Hub is an educational platform designed
+        to make dental knowledge easier to explore and understand.
+        The website brings together evidence-based dental information,
+        clinical concepts, research resources, BDS study materials
+        and patient-friendly oral health education.
+      </p>
+
+      <p>
+        Our goal is to create a structured and searchable resource
+        for dental students, healthcare professionals, researchers
+        and anyone interested in oral health.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-links">
+
+    <a href="#home">Home</a>
+    <a href="#research">Research</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#about">About</a>
+
+  </div>
+
+  <p>
+    © 2026 Dental Research Hub. Educational resource for dentistry.
+  </p>
+
+</footer>
+
+
+<script>
+
+function searchArticles() {
+
+  const input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+  const results =
+    document.getElementById("searchResults");
+
+  const articles = [
+
+    {
+      title: "Why Are My Teeth Sensitive?",
+      keywords: "sensitivity dentinal hypersensitivity teeth pain"
+    },
+
+    {
+      title: "Tooth Development",
+      keywords: "tooth development oral histology embryology"
+    },
+
+    {
+      title: "Dental Plaque and Calculus",
+      keywords: "plaque calculus periodontology gingivitis"
+    },
+
+    {
+      title: "Root Canal Treatment",
+      keywords: "endodontics root canal pulp"
+    },
+
+    {
+      title: "Wisdom Teeth",
+      keywords: "third molar impacted wisdom tooth oral surgery"
+    },
+
+    {
+      title: "Oral Hygiene",
+      keywords: "brushing interdental cleaning prevention"
+    }
+
+  ];
+
+
+  if (!input) {
+
+    results.style.display = "none";
+    results.innerHTML = "";
+
+    return;
+
+  }
+
+
+  const matches = articles.filter(article =>
+    article.title.toLowerCase().includes(input) ||
+    article.keywords.includes(input)
+  );
+
+
+  results.style.display = "block";
+
+
+  if (matches.length === 0) {
+
+    results.innerHTML =
+      "<p>No matching articles found. More resources will be added soon.</p>";
+
+    return;
+
+  }
+
+
+  results.innerHTML = matches.map(article =>
+    `<p><strong>${article.title}</strong></p>`
+  ).join("");
+
+}
+
+</script>
+
+</body>
+</html>
